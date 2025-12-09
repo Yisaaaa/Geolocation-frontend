@@ -29,6 +29,8 @@ export default function HomePage() {
     fetchHistory();
   }, []);
 
+  console.log(isHistoryLoading);
+
   const fetchCurrentLocation = async () => {
     console.log("fetching current location");
     try {
