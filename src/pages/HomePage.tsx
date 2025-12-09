@@ -1,5 +1,5 @@
 import { useAuthStore } from "@/store/authStore";
-import { Globe, History, LogOut, MapPin, RefreshCcw } from "lucide-react";
+import { Globe, LogOut, MapPin, RefreshCcw } from "lucide-react";
 import { useEffect, useState } from "react";
 import CurrentLocationCard from "@/components/CurrentLocationCard";
 import type { GeoData, SearchHistoryItem } from "@/types/geo";
@@ -16,7 +16,7 @@ export default function HomePage() {
   const [geoData, setGeoData] = useState<GeoData | null>(null);
   const [history, setHistory] = useState<SearchHistoryItem[] | []>([]);
   const [isGeoLoading, setIsGeoLoading] = useState(true);
-  // const [isHistoryLoading, setIsHistoryLoading] = useState(true);
+  const [isHistoryLoading, setIsHistoryLoading] = useState(true);
   const [selectedHistory, setSelectedHistory] = useState<
     SearchHistoryItem[] | []
   >([]);
@@ -82,7 +82,7 @@ export default function HomePage() {
       setGeoData(response.data);
       setIsCurrentLocation(false);
       setSearchedIp(trimmedIp);
-      await fetchHistory();
+      fetchHistory();
       toast.success("Location found!");
     } catch (error: any) {
       console.error("Failed to search IP: ", error);
