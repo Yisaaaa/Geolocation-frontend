@@ -16,7 +16,7 @@ export default function HomePage() {
   const [geoData, setGeoData] = useState<GeoData | null>(null);
   const [history, setHistory] = useState<SearchHistoryItem[] | []>([]);
   const [isGeoLoading, setIsGeoLoading] = useState(true);
-  const [isHistoryLoading, setIsHistoryLoading] = useState(true);
+  // const [isHistoryLoading, setIsHistoryLoading] = useState(true);
   const [selectedHistory, setSelectedHistory] = useState<
     SearchHistoryItem[] | []
   >([]);
